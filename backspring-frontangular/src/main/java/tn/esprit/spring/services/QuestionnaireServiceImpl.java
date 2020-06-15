@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entities.Questionnaire;
+import tn.esprit.spring.entities.User;
 import tn.esprit.spring.repository.QuestionnaiRerepository;
 
 @Service
@@ -21,7 +22,8 @@ public class QuestionnaireServiceImpl implements IQuestionnaireService {
 		
 	@Override
 	public Questionnaire addQuestionnaire(Questionnaire a) {
-		
+		User user = new User();
+		a.setUser(user);
 		return questionnaiRerepository.save(a);
 	}
 

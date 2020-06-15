@@ -14,6 +14,8 @@ import javax.persistence.Table;
 @PrimaryKeyJoinColumn(name = "id")
 public class Admin extends User implements Serializable {
 	
+	
+	private static final long serialVersionUID = 2977617278460694732L;
 	private String Cv;
 	private String Pv;
 	public Admin(String nom, String prenom, String email, String address, Date datenaissance, String password,

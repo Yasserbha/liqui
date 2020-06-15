@@ -29,6 +29,8 @@ public class User  implements Serializable{
 	
 	private String nom;
 	
+	private String image;
+	
 	private String prenom;
 	
 	@Column(unique=true)
@@ -91,6 +93,40 @@ public class User  implements Serializable{
 		this.sexe = sexe;
 		this.role = role;
 		this.questionnaire = questionnaire;
+	}
+	
+	
+
+
+
+	public User(String nom, String image, String prenom, String email, String address, Date datenaissance,
+			String password, int phoneNumber, Sexe sexe, Role role, Questionnaire questionnaire) {
+		super();
+		this.nom = nom;
+		this.image = image;
+		this.prenom = prenom;
+		this.email = email;
+		this.address = address;
+		this.datenaissance = datenaissance;
+		this.password = password;
+		this.phoneNumber = phoneNumber;
+		this.sexe = sexe;
+		this.role = role;
+		this.questionnaire = questionnaire;
+	}
+
+	
+	
+	
+
+	public String getImage() {
+		return image;
+	}
+
+
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 

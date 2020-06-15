@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,9 +14,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import tn.esprit.spring.entities.Admin;
+import tn.esprit.spring.entities.User;
 import tn.esprit.spring.services.IAdminService;
 
-
+@CrossOrigin(origins = "*")
 @Controller
 public class ControllerAdminImpl {
 	@Autowired
@@ -47,5 +49,13 @@ public class ControllerAdminImpl {
 		public void removeUser(@PathVariable("Admin-id") Long AdminId) {
 			adminservice.deleteAdmin(AdminId);
 		}
+		
+		// http://localhost:8081/SpringMVC/servlet/retrieve-user/{user-id}
+		@GetMapping("/Authentification/{email}/{password}")
+		@ResponseBody
+		public User Authentification(@PathVariable("email") String email,@PathVariable("password") String password) {
+		return adminservice.getAuthentification(email, password);
+		}
+		
 
 }

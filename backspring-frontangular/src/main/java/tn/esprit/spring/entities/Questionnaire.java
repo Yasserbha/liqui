@@ -91,6 +91,22 @@ public class Questionnaire {
 
 
 
+	public User getUser() {
+		return user;
+	}
+
+
+
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+
+
+
+
 	public void setSreponse(String sreponse) {
 		Sreponse = sreponse;
 	}

@@ -38,6 +38,12 @@ public class Produit implements Serializable {
 	
 	private String description;
 	
+	private String image;
+	
+	private String video;
+	
+	
+	
 	
 	@ManyToOne
 	private Client client;
@@ -46,6 +52,18 @@ public class Produit implements Serializable {
 	public Produit() {
 		super();
 	}
+	
+
+	public Produit(double price, int nbrPieces, String etat, String location, boolean actif, String description) {
+		super();
+		this.price = price;
+		this.nbrPieces = nbrPieces;
+		this.etat = etat;
+		this.location = location;
+		Actif = actif;
+		this.description = description;
+	}
+
 
 	public Produit(double price, int nbrPieces, String etat, String location, boolean actif,
 			String description, Client client) {
@@ -71,6 +89,45 @@ public class Produit implements Serializable {
 		Actif = actif;
 		this.description = description;
 		this.client = client;
+	}
+	
+	
+
+
+	public Produit(double price, int nbrPieces, String etat, String location, boolean actif, String description,
+			String image, String video, Client client) {
+		super();
+		this.price = price;
+		this.nbrPieces = nbrPieces;
+		this.etat = etat;
+		this.location = location;
+		Actif = actif;
+		this.description = description;
+		this.image = image;
+		this.video = video;
+		this.client = client;
+	}
+	
+	
+
+
+	public String getImage() {
+		return image;
+	}
+
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+
+	public String getVideo() {
+		return video;
+	}
+
+
+	public void setVideo(String video) {
+		this.video = video;
 	}
 
 
