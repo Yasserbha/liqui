@@ -18,6 +18,11 @@ public class Admin extends User implements Serializable {
 	private static final long serialVersionUID = 2977617278460694732L;
 	private String Cv;
 	private String Pv;
+	
+	
+	public Admin() {
+		
+	}
 	public Admin(String nom, String prenom, String email, String address, Date datenaissance, String password,
 			int phoneNumber, Sexe sexe, Role role, Questionnaire questionnaire ,String cv, String pv) {
 		super( nom,  prenom,  email,  address,  datenaissance,  password,
